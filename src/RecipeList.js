@@ -1,20 +1,8 @@
 import React from "react";
-import DeleteButton from "./ButtonDelete";
+import RecipeItem from "./RecipeItem";
 
 function RecipeList({ recipes, setRecipes }) {
-  const list = recipes.map((recipe, index) => {
-    return (
-      <tr key={index}>
-          <td>{recipe.name}</td>
-          <td>{recipe.cuisine}</td>
-          <td><img src={recipe.photo} alt="food"/></td>
-        <td className="content_td"><p>{recipe.ingredients}</p></td>
-          <td className="content_td"><p>{recipe.preparation}</p></td>
-          <td><DeleteButton recipes={recipes} setRecipes={setRecipes} index={index}/></td>
-      </tr>
-    );
-})
-return (
+  return (
   <div className="recipe-list">
     <table>
       <thead>
@@ -27,7 +15,7 @@ return (
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>{list}</tbody>
+      <tbody><RecipeItem recipes={recipes} setRecipes={setRecipes} /></tbody>
     </table>
   </div>
 );
