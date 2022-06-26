@@ -1,5 +1,5 @@
 import React from 'react';
-import DeleteButton from './ButtonDelete';
+import DeleteButton from './DeleteRecipe';
 
 function RecipeItem({ recipes, setRecipes }){
     const list = recipes.map((recipe, index) => {
